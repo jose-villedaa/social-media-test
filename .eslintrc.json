@@ -1,3 +1,37 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "airbnb",
+    "airbnb-typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"]
+    }
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "react/require-default-props": [0],
+    "react/jsx-props-no-spreading": [0],
+    "jsx-a11y/label-has-associated-control": [0]
+  }
 }
