@@ -12,7 +12,9 @@ if (!GITHUB_CLIENT_ID || !GITHUB_CLIENT_SECRET) {
   );
 }
 
-export const { handlers: { GET, POST }, signIn, signOut } = NextAuth({
+export const {
+  handlers: { GET, POST }, auth, signIn, signOut,
+} = NextAuth({
   adapter: PrismaAdapter(db),
   providers: [
     Github({
