@@ -1,7 +1,8 @@
 'use server';
 
-async function createTopic() {
-  return {};
-}
+export default async function createTopic(formData: FormData) {
+  const name = formData.get('name');
+  const description = formData.get('description');
 
-export default createTopic;
+  console.log(name, description);
+}

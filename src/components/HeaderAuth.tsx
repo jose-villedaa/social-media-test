@@ -23,7 +23,7 @@ export default function HeaderAuth(): JSX.Element {
     authContent = <Spinner color="secondary" />;
   } else if (session?.data?.user) {
     authContent = (
-      <Popover placement="bottom">
+      <Popover placement="left">
         <PopoverTrigger>
           <div className="cursor-pointer hover:opacity-80">
             <Avatar src={session.data?.user?.image || ''} />
