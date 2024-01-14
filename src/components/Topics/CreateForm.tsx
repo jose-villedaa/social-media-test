@@ -1,5 +1,6 @@
 'use client';
 
+import { useFormState } from 'react-dom';
 import React from 'react';
 import {
   Button,
@@ -10,15 +11,18 @@ import {
   PopoverContent,
 } from '@nextui-org/react';
 import * as actions from '@/actions';
+import LoadingButton from '@/components/common/LoadingButton';
 
 export default function CreateForm(): JSX.Element {
+  const [formState, action] = useFormState(actions.CreateTopic, { errors: {} });
+
   return (
     <Popover placement="bottom">
       <PopoverTrigger>
         <Button color="primary">Create a topic</Button>
       </PopoverTrigger>
       <PopoverContent>
-        <form action={actions.CreateTopic}>
+        <form action={action}>
           <div className="flex flex-col gap-4 p-4 w-80">
             <h3 className="text-xl font-bold mb-2">Create a Topic</h3>
             <Input
@@ -26,6 +30,8 @@ export default function CreateForm(): JSX.Element {
               placeholder="Name"
               label="Name"
               labelPlacement="outside"
+              isInvalid={!!formState.errors.name}
+              errorMessage={formState.errors.name?.join(', ')}
               required
             />
             <Textarea
@@ -33,11 +39,20 @@ export default function CreateForm(): JSX.Element {
               label="Description"
               labelPlacement="outside"
               name="description"
+              isInvalid={!!formState.errors.description}
+              errorMessage={formState.errors.description?.join(', ')}
               required
             />
-            <Button type="submit">
+            {formState.errors.formErr ? (
+              <div className="mt-2 border-l-4 border-red-400 text-red-900 bg-red-100 p-3" role="alert">
+                {' '}
+                {formState.errors.formErr?.join(', ')}
+                {' '}
+              </div>
+            ) : null}
+            <LoadingButton>
               Create
-            </Button>
+            </LoadingButton>
           </div>
         </form>
       </PopoverContent>

@@ -1,4 +1,4 @@
-const paths: object = {
+const paths = {
   home() {
     return '/';
   },
