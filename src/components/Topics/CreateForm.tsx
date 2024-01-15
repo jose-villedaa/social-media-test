@@ -13,7 +13,7 @@ import {
 import * as actions from '@/actions';
 import LoadingButton from '@/components/common/LoadingButton';
 
-export default function CreateForm(): JSX.Element {
+export default function CreateForm(): React.JSX.Element {
   const [formState, action] = useFormState(actions.CreateTopic, { errors: {} });
 
   return (
