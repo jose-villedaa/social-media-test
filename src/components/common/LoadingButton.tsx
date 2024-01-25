@@ -8,7 +8,7 @@ export type LoadingButtonProps = {
   children: React.ReactNode;
 };
 
-export default function LoadingButton({ children }: LoadingButtonProps): JSX.Element {
+export default function LoadingButton({ children }: LoadingButtonProps) {
   const { pending } = useFormStatus();
 
   return (
