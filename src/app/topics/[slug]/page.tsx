@@ -1,7 +1,7 @@
 import React from 'react';
 import CreateForm from '@/components/Posts/CreateForm';
 import PostList from '@/components/Posts/ListPosts';
-import fetchPostsByTopicSlug from '@/db/queries/post';
+import { fetchPostsByTopicSlug } from '@/db/queries/post';
 
 interface TopicShowPageProps {
   params: {

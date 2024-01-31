@@ -26,6 +26,7 @@ export default async function PostList({ fetchData }: PostListProps) {
           <div className="flex flex-row gap-8">
             <p className="text-xs text-gray-400">
               By
+              {' '}
               {post.user.name}
             </p>
             <p className="text-xs text-gray-400">

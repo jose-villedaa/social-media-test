@@ -1,13 +1,22 @@
 import React from 'react';
+import db from '@/db';
+import { notFound } from 'next/navigation';
 
 interface PostShowProps {
-  post: {
-    title: string;
-    content: string;
-  };
+  postId: string;
 }
 
-export default function PostShow({ post }: PostShowProps) {
+export default async function PostShow({ postId }: PostShowProps) {
+  const post = await db.post.findUnique({
+    where: {
+      id: postId,
+    },
+  });
+
+  if (!post) {
+    notFound();
+  }
+
   return (
     <div className="m-4">
       <h1 className="text-2xl font-bold my-2">{post.title}</h1>
