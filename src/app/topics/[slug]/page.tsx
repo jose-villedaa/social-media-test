@@ -16,7 +16,11 @@ export default function TopicShowPage({ params }: TopicShowPageProps) : React.JS
     <div className="grid grid-cols-4 gap-4 p-4">
       <div className="col-span-3">
         <h1 className="text-2xl font-bold mb-2">
+          Welcome to the
+          {' '}
           {slug}
+          {' '}
+          topic
         </h1>
         <PostList fetchData={() => fetchPostsByTopicSlug(slug)} />
       </div>

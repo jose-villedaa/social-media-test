@@ -39,7 +39,6 @@ export default function CommentCreateForm({
       <div className="space-y-2 px-1">
         <Textarea
           name="content"
-          label="Reply"
           placeholder="Enter your comment"
           isInvalid={!!formState.errors.content}
           errorMessage={formState.errors.content?.join(', ')}
@@ -51,14 +50,19 @@ export default function CommentCreateForm({
           </div>
         ) : null}
 
-        <LoadingButton>Create Comment</LoadingButton>
+        <LoadingButton color="default">Create Comment</LoadingButton>
       </div>
     </form>
   );
 
   return (
     <div>
-      <Button size="sm" variant="light" onClick={() => setOpen(!open)}>
+      <Button
+        size="sm"
+        variant="light"
+        className="text-blue-500 hover:bg-white "
+        onClick={() => setOpen(!open)}
+      >
         Reply
       </Button>
       {open && form}

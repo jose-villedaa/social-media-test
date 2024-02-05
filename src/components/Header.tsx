@@ -14,15 +14,15 @@ import SearchInput from '@/components/SearchInput';
 
 export default function Header(): React.JSX.Element {
   return (
-    <Navbar className="shadow mb-6">
+    <Navbar className="mb-6 bg-blue-950">
       <NavbarBrand>
         <Link href="/" className="font-bold">
-          <Image src="/jeddit.png" alt="Jeddit Logo" width={120} height={120} />
+          <Image src="/jeddit-white.png" alt="Jeddit Logo" width={120} height={120} />
         </Link>
       </NavbarBrand>
       <NavbarContent justify="center">
         <NavbarItem>
-          <div className="container mx-auto">
+          <div className="">
             <Suspense fallback>
               <SearchInput />
             </Suspense>

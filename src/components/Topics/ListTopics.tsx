@@ -12,7 +12,7 @@ export default async function ListTopics() {
   const renderedTopics = topics.map((topic) => (
     <div key={topic.id}>
       <Link href={paths.topicShow(topic.slug)}>
-        <Chip color="warning" variant="shadow">
+        <Chip color="primary" variant="dot">
           {topic.slug.charAt(0).toUpperCase() + topic.slug.slice(1).toLowerCase()}
         </Chip>
       </Link>

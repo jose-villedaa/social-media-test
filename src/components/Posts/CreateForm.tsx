@@ -30,8 +30,8 @@ export default function CreateForm({ slug }: PostCProps): React.JSX.Element {
 
   return (
     <div>
-      <Button onPress={onOpen}>
-        <Add />
+      <Button onPress={onOpen} endContent={<Add />}>
+        Create Post
       </Button>
 
       <Modal

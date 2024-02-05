@@ -28,6 +28,7 @@ export default function HeaderAuth(): JSX.Element {
         <PopoverTrigger>
           <div className="cursor-pointer hover:opacity-80">
             <User
+              className="text-white"
               name={session.data.user.name}
               description={session.data.user.email}
               avatarProps={{
@@ -50,7 +51,12 @@ export default function HeaderAuth(): JSX.Element {
       <div className="flex space-x-4">
         <NavbarItem>
           <form action={actions.signIn}>
-            <Button type="submit" variant="flat" endContent={<GitHubIcon />}>
+            <Button
+              type="submit"
+              variant="flat"
+              endContent={<GitHubIcon />}
+              className="bg-white"
+            >
               Sign in with GitHub
             </Button>
           </form>
