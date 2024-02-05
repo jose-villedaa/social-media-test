@@ -2,6 +2,7 @@
 
 import React, { Suspense } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Navbar,
   NavbarBrand,
@@ -16,13 +17,13 @@ export default function Header(): React.JSX.Element {
     <Navbar className="shadow mb-6">
       <NavbarBrand>
         <Link href="/" className="font-bold">
-          Discuss
+          <Image src="/jeddit.png" alt="Jeddit Logo" width={120} height={120} />
         </Link>
       </NavbarBrand>
       <NavbarContent justify="center">
         <NavbarItem>
           <div className="container mx-auto">
-            <Suspense>
+            <Suspense fallback>
               <SearchInput />
             </Suspense>
           </div>
